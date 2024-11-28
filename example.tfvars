@@ -19,7 +19,7 @@ pm_tls_insecure     = false
 pm_host             = "your-proxmox-host"
 pm_parallel         = 2
 pm_timeout          = 600
-
+pm_vmid_start       = 1000
 
 # Common infrastructure configurations
 ########################################################################

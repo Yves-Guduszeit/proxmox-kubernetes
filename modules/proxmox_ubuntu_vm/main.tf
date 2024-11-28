@@ -11,6 +11,7 @@ terraform {
 
 resource "proxmox_vm_qemu" "ubuntu_vm" {
   count            = var.node_count
+  vmid             = var.pm_vmid_start + var.vm_host_number + count.index
   target_node      = var.pm_host
   clone            = var.vm_ubuntu_tmpl_name
   qemu_os          = "l26"
@@ -76,5 +77,4 @@ resource "proxmox_vm_qemu" "ubuntu_vm" {
       tags
     ]
   }
-
 }

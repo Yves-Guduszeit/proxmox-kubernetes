@@ -54,6 +54,7 @@ module "kubespray_host" {
   source = "./modules/proxmox_ubuntu_vm"
 
   node_count                   = var.create_kubespray_host ? 1 : 0
+  pm_vmid_start                = var.pm_vmid_start
   pm_host                      = var.pm_host
   vm_ubuntu_tmpl_name          = var.vm_ubuntu_tmpl_name
   vm_name_prefix               = var.use_legacy_naming_convention ? "${var.env_name}-kubespray" : "vm-${local.cluster_name}-kubespray"
@@ -66,7 +67,7 @@ module "kubespray_host" {
   vm_os_disk_size_gb           = 10
   vm_net_name                  = var.internal_net_name
   vm_net_subnet_cidr           = var.internal_net_subnet_cidr
-  vm_host_number               = 5
+  vm_host_number               = 12
   vm_user                      = var.vm_user
   vm_tags                      = "${var.env_name};terraform;kubespray"
   ssh_public_keys              = var.ssh_public_keys

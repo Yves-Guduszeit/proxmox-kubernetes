@@ -17,6 +17,6 @@ destroy:
 	source .env.$(env) && terraform init -upgrade && terraform destroy
 
 cluster: test
-	terraform apply -var-file="example.tfvars"
+	terraform apply -var-file="terraform.tfvars"
 
 .PHONY: fmt fmt-check init test deploy destroy

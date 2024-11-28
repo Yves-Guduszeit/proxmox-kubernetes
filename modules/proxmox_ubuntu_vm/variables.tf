@@ -1,3 +1,9 @@
+variable "pm_vmid_start" {
+  type        = number
+  description = "The start range VM index into Proxmox."
+  default     = 1000
+}
+
 variable "pm_host" {
   type        = string
   description = "The name of Proxmox node where the VM is placed."
