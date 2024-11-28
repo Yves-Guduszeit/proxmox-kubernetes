@@ -71,6 +71,7 @@ The project provides several Terraform variables that allow you to customize the
 | pm\_host | The name of Proxmox node where the VM is placed. | `string` | n/a | yes |
 | pm\_parallel | The number of simultaneous Proxmox processes. E.g: creating resources. | `number` | `2` | no |
 | pm\_timeout | Timeout value (seconds) for proxmox API calls. | `number` | `600` | no |
+| pm\_vmid\_start | The start range VM index into Proxmox. | `number` | `1000` | no |
 | internal\_net\_name | Name of the internal network bridge | `string` | `"vmbr1"` | no |
 | internal\_net\_subnet\_cidr | CIDR of the internal network | `string` | `"10.0.1.0/24"` | no |
 | ssh\_private\_key | SSH private key in base64, will be used by Terraform client to connect to the Kubespray VM after provisioning. We can set its sensitivity to false; otherwise, the output of the Kubespray script will be hidden. | `string` | n/a | yes |
@@ -87,8 +88,8 @@ The project provides several Terraform variables that allow you to customize the
 | bastion\_ssh\_ip | IP of the bastion host, could be either public IP or local network IP of the bastion host | `string` | `""` | no |
 | bastion\_ssh\_user | The user to authenticate to the bastion host | `string` | `"ubuntu"` | no |
 | bastion\_ssh\_port | The SSH port number on the bastion host | `number` | `22` | no |
-| vm\_k8s\_control\_plane | Control Plane VM specification | `object({ node_count = number, vcpus = number, memory = number, disk_size = number })` | <pre>{<br>  "disk_size": 20,<br>  "memory": 1536,<br>  "node_count": 1,<br>  "vcpus": 2<br>}</pre> | no |
-| vm\_k8s\_worker | Worker VM specification | `object({ node_count = number, vcpus = number, memory = number, disk_size = number })` | <pre>{<br>  "disk_size": 20,<br>  "memory": 2048,<br>  "node_count": 2,<br>  "vcpus": 2<br>}</pre> | no |
+| vm\_k8s\_control\_plane | Control Plane VM specification | `object({ node_count = number, vcpus = number, memory = number, disk_size = number })` | <pre>{<br/>  "disk_size": 20,<br/>  "memory": 1536,<br/>  "node_count": 1,<br/>  "vcpus": 2<br/>}</pre> | no |
+| vm\_k8s\_worker | Worker VM specification | `object({ node_count = number, vcpus = number, memory = number, disk_size = number })` | <pre>{<br/>  "disk_size": 20,<br/>  "memory": 2048,<br/>  "node_count": 2,<br/>  "vcpus": 2<br/>}</pre> | no |
 | create\_kubespray\_host | Whether to provision the Kubespray as a VM | `bool` | `true` | no |
 | kubespray\_image | The Docker image to deploy Kubespray | `string` | `"quay.io/kubespray/kubespray:v2.25.0"` | no |
 | kube\_version | Kubernetes version | `string` | `"v1.29.5"` | no |
