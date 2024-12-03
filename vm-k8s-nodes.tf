@@ -15,7 +15,7 @@ module "k8s_control_plane_nodes" {
   vm_os_disk_size_gb           = var.vm_k8s_control_plane["disk_size"]
   vm_net_name                  = var.internal_net_name
   vm_net_subnet_cidr           = var.internal_net_subnet_cidr
-  vm_host_number               = 20
+  vm_host_number               = 30
   vm_user                      = var.vm_user
   vm_tags                      = "${var.env_name};terraform;k8s_control_plane"
   ssh_public_keys              = var.ssh_public_keys
@@ -39,7 +39,7 @@ module "k8s_worker_nodes" {
   vm_os_disk_size_gb            = var.vm_k8s_worker["disk_size"]
   vm_net_name                   = var.internal_net_name
   vm_net_subnet_cidr            = var.internal_net_subnet_cidr
-  vm_host_number                = 30
+  vm_host_number                = 40
   vm_user                       = var.vm_user
   vm_tags                       = "${var.env_name};terraform;k8s_worker"
   ssh_public_keys               = var.ssh_public_keys

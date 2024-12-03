@@ -67,7 +67,7 @@ module "kubespray_host" {
   vm_os_disk_size_gb           = 10
   vm_net_name                  = var.internal_net_name
   vm_net_subnet_cidr           = var.internal_net_subnet_cidr
-  vm_host_number               = 12
+  vm_host_number               = 22
   vm_user                      = var.vm_user
   vm_tags                      = "${var.env_name};terraform;kubespray"
   ssh_public_keys              = var.ssh_public_keys
