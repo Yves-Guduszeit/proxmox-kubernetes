@@ -173,9 +173,9 @@ variable "bastion_ssh_port" {
 
 # Kuberentes VM specifications for Kubernetes nodes
 ########################################################################
-variable "vm_k8s_control_plane" {
+variable "vm_k8s_master" {
   type        = object({ node_count = number, vcpus = number, memory = number, disk_size = number })
-  description = "Control Plane VM specification"
+  description = "Master VM specification"
   default     = { node_count = 1, vcpus = 2, memory = 1536, disk_size = 20 }
 }
 

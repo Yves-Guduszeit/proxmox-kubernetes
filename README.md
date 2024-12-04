@@ -88,7 +88,7 @@ The project provides several Terraform variables that allow you to customize the
 | bastion\_ssh\_ip | IP of the bastion host, could be either public IP or local network IP of the bastion host | `string` | `""` | no |
 | bastion\_ssh\_user | The user to authenticate to the bastion host | `string` | `"ubuntu"` | no |
 | bastion\_ssh\_port | The SSH port number on the bastion host | `number` | `22` | no |
-| vm\_k8s\_control\_plane | Control Plane VM specification | `object({ node_count = number, vcpus = number, memory = number, disk_size = number })` | <pre>{<br/>  "disk_size": 20,<br/>  "memory": 1536,<br/>  "node_count": 1,<br/>  "vcpus": 2<br/>}</pre> | no |
+| vm\_k8s\_master | Master VM specification | `object({ node_count = number, vcpus = number, memory = number, disk_size = number })` | <pre>{<br/>  "disk_size": 20,<br/>  "memory": 1536,<br/>  "node_count": 1,<br/>  "vcpus": 2<br/>}</pre> | no |
 | vm\_k8s\_worker | Worker VM specification | `object({ node_count = number, vcpus = number, memory = number, disk_size = number })` | <pre>{<br/>  "disk_size": 20,<br/>  "memory": 2048,<br/>  "node_count": 2,<br/>  "vcpus": 2<br/>}</pre> | no |
 | create\_kubespray\_host | Whether to provision the Kubespray as a VM | `bool` | `true` | no |
 | kubespray\_image | The Docker image to deploy Kubespray | `string` | `"quay.io/kubespray/kubespray:v2.25.0"` | no |
