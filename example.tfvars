@@ -38,8 +38,8 @@ ssh_private_key = "put-base64-encoded-private-key-here"
 
 # Bastion host details. This is required for the Terraform client to 
 # connect to the Kubespray VM that will be placed into the internet network
-bastion_ssh_ip   = "192.168.1.131"
-bastion_ssh_user = "ubuntu"
+bastion_ssh_ip   = "192.168.3.21"
+bastion_ssh_user = "debian"
 bastion_ssh_port = 22
 
 # VM specifications

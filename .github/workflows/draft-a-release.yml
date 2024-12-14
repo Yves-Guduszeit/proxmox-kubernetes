@@ -5,7 +5,7 @@ on:
 
 jobs:
   draft-a-release:
-    runs-on: ubuntu-latest
+    runs-on: debian-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v3

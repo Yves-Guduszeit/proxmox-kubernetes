@@ -103,7 +103,7 @@ variable "ssh_public_keys" {
 variable "vm_user" {
   type        = string
   description = "The default user for all VMs"
-  default     = "ubuntu"
+  default     = "debian"
 }
 
 variable "vm_sockets" {
@@ -147,10 +147,10 @@ variable "worker_node_data_disk_size" {
   default     = 10
 }
 
-variable "vm_ubuntu_tmpl_name" {
+variable "vm_debian_tmpl_name" {
   type        = string
-  description = "Name of Cloud-init template Ubuntu VM"
-  default     = "ubuntu-2404"
+  description = "Name of Cloud-init template Debian VM"
+  default     = "debian-12"
 }
 
 variable "bastion_ssh_ip" {
@@ -162,7 +162,7 @@ variable "bastion_ssh_ip" {
 variable "bastion_ssh_user" {
   type        = string
   description = "The user to authenticate to the bastion host"
-  default     = "ubuntu"
+  default     = "debian"
 }
 
 variable "bastion_ssh_port" {

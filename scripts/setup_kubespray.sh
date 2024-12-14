@@ -3,12 +3,6 @@ kubespray_data_dir=${kubespray_data_dir}
 apt_lock_max_wait_time=600
 apt_retry_interval=10
 
-# Disable "Pending kernel upgrade". https://askubuntu.com/questions/1349884/how-to-disable-pending-kernel-upgrade-message
-sudo sed -i "s/#\$nrconf{kernelhints} = -1;/\$nrconf{kernelhints} = -1;/g" /etc/needrestart/needrestart.conf
-
-# Avoid popup https://stackoverflow.com/questions/73397110/how-to-stop-ubuntu-pop-up-daemons-using-outdated-libraries-when-using-apt-to-i
-sudo sed -i "s/#\$nrconf{restart} = 'i';/\$nrconf{restart} = 'a';/g" /etc/needrestart/needrestart.conf
-
 # Function to check if the apt lock file is open
 is_lock_file_open() {
   sudo lsof -t "/var/lib/apt/lists/lock" >/dev/null 2>&1 ||

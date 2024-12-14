@@ -51,12 +51,12 @@ locals {
 
 
 module "kubespray_host" {
-  source = "./modules/proxmox_ubuntu_vm"
+  source = "./modules/proxmox_debian_vm"
 
   node_count                   = var.create_kubespray_host ? 1 : 0
   pm_vmid_start                = var.pm_vmid_start
   pm_host                      = var.pm_host
-  vm_ubuntu_tmpl_name          = var.vm_ubuntu_tmpl_name
+  vm_debian_tmpl_name          = var.vm_debian_tmpl_name
   vm_name_prefix               = var.use_legacy_naming_convention ? "${var.env_name}-kubespray" : "vm-${local.cluster_name}-kubespray"
   vm_max_vcpus                 = var.vm_max_vcpus
   vm_vcpus                     = 2

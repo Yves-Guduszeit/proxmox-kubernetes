@@ -1,10 +1,10 @@
 module "k8s_master_nodes" {
-  source = "./modules/proxmox_ubuntu_vm"
+  source = "./modules/proxmox_debian_vm"
 
   node_count                   = var.vm_k8s_master["node_count"]
   pm_vmid_start                = var.pm_vmid_start
   pm_host                      = var.pm_host
-  vm_ubuntu_tmpl_name          = var.vm_ubuntu_tmpl_name
+  vm_debian_tmpl_name          = var.vm_debian_tmpl_name
   vm_name_prefix               = var.use_legacy_naming_convention ? "${var.env_name}-k8s-master" : "vm-${local.cluster_name}-master"
   vm_max_vcpus                 = var.vm_max_vcpus
   vm_vcpus                     = var.vm_k8s_master["vcpus"]
@@ -23,12 +23,12 @@ module "k8s_master_nodes" {
 }
 
 module "k8s_worker_nodes" {
-  source = "./modules/proxmox_ubuntu_vm"
+  source = "./modules/proxmox_debian_vm"
 
   node_count                    = var.vm_k8s_worker["node_count"]
   pm_vmid_start                 = var.pm_vmid_start
   pm_host                       = var.pm_host
-  vm_ubuntu_tmpl_name           = var.vm_ubuntu_tmpl_name
+  vm_debian_tmpl_name           = var.vm_debian_tmpl_name
   vm_name_prefix                = var.use_legacy_naming_convention ? "${var.env_name}-k8s-worker" : "vm-${local.cluster_name}-worker"
   vm_max_vcpus                  = var.vm_max_vcpus
   vm_vcpus                      = var.vm_k8s_worker["vcpus"]

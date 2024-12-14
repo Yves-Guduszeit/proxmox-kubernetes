@@ -48,7 +48,7 @@ variable "vm_onboot" {
 
 variable "vm_user" {
   type    = string
-  default = "ubuntu"
+  default = "debian"
 }
 
 variable "vm_sockets" {
@@ -91,10 +91,10 @@ variable "vm_os_disk_storage" {
   description = "Default storage pool where OS VM disk is placed."
 }
 
-variable "vm_ubuntu_tmpl_name" {
+variable "vm_debian_tmpl_name" {
   type        = string
-  description = "Name of Cloud-init template Ubuntu VM."
-  default     = "ubuntu-2404"
+  description = "Name of Cloud-init template Debian VM."
+  default     = "debian-12"
 }
 
 variable "vm_host_number" {
